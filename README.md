@@ -1,7 +1,7 @@
 # lucerne_scraping
 Scraping the [lucerne summer festival webpage](https://www.lucernefestival.ch/en/program/summer-festival-22) and storing the data in postgres database system.
 
-To run the code, run these two commands:
+To run the system, run these two commands:
 
 `docker-compose up -d db`
 

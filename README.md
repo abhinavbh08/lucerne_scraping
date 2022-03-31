@@ -8,4 +8,7 @@ To run the code, do:
 `docker-compose up --build pythonapp`
 
 The resulting database when viewed using dbeaver looks like this:
-First half of the database is (since the full database was not fitting on the screen of the laptop): 
+The screenshot is divided into two parts as the resulting database was not fitting on the screen. The first 10 rows are shown:
+
+![Database first half](first_half.png)
+![Database second half](second_half.png)

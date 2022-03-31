@@ -1,0 +1,30 @@
+version: '3.9'
+
+# services are the containers.
+services:
+  pythonapp:
+    container_name: pythonapp
+    image: pythonapp
+    build: . # because we are building image using our own DockerFile for the python app.
+    ports:
+      - "80:80"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/postgres
+    depends_on:
+     - db
+
+  db:
+    container_name: db
+    image: postgres:12
+    ports:
+      - "6543:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  pgdata: {}
